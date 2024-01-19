@@ -1,4 +1,11 @@
-operacao = input("Digite a operação:\n1 - Depósito\n2 - Saque\n3 - Extrato\n4 - Sair\n\n")
+operacao = input("""########    Menu    ########
+                 
+  1 - Depósito
+  2 - Saque
+  3 - Extrato
+  4 - Sair
+                 
+""")
 saldo = 100
 lista_depositos = []
 lista_saques = []
@@ -12,7 +19,14 @@ while operacao != 4:
         saldo = saldo + deposito
         lista_depositos.append(deposito)
         print("Deposito realizado com sucesso!\n")
-        operacao = input("Deseja realizar outra opeção?\n1 - Depósito\n2 - Saque\n3 - Extrato\n4 - Sair\n\n")
+        operacao = input("""########    Menu    ########
+                 
+  1 - Depósito
+  2 - Saque
+  3 - Extrato
+  4 - Sair
+                 
+""")
     elif operacao == "2":
         saque = float(input("Digite o valor do saque: "))
         while saque <= 0:
@@ -24,11 +38,25 @@ while operacao != 4:
         saque_permitido_no_dia -= saque
         if saque_permitido_no_dia <= 0:
             print(f'Valor de saque não permitido, saque máximo permitido é de R${saque_permitido_no_dia + saque:,.2f}\n')
-            operacao = input("Deseja realizar outra opeção?\n1 - Depósito\n3 - Extrato\n4 - Sair\n\n")
+            operacao = input("""########    Menu    ########
+                 
+  1 - Depósito
+  2 - Saque
+  3 - Extrato
+  4 - Sair
+                 
+""")
         saldo = saldo - saque
         lista_saques.append(saque)
         print("Saque realizado com sucesso!\n")
-        operacao = input("Deseja realizar outra opeção?\n1 - Depósito\n2 - Saque\n3 - Extrato\n4 - Sair\n\n")
+        operacao = input("""########    Menu    ########
+                 
+  1 - Depósito
+  2 - Saque
+  3 - Extrato
+  4 - Sair
+                 
+""")
     elif operacao == "3":
         print(f'{"Saque":>5}   {"Depósito":>12}')
         maior_lista = max(len(lista_saques), len(lista_depositos))
@@ -39,10 +67,24 @@ while operacao != 4:
                 print(f'{lista_saques[i]:>5,.2f}   {"-":>12}')
             else:
                 print(f'{lista_saques[i]:>5,.2f}   {lista_depositos[i]:>12,.2f}')
-        operacao = input("Deseja realizar outra opeção?\n1 - Depósito\n2 - Saque\n3 - Extrato\n4 - Sair\n\n")
+        operacao = input("""########    Menu    ########
+                 
+  1 - Depósito
+  2 - Saque
+  3 - Extrato
+  4 - Sair
+                 
+""")
     elif operacao == "4":
         print("Obrigado!")
         break
     else:
         print("Operação inválida!")
-        operacao = input("Digite a operação:\n1 - Depósito\n2 - Saque\n3 - Extrato\n4 - Sair\n\n")
+        operacao = input("""########    Menu    ########
+                 
+  1 - Depósito
+  2 - Saque
+  3 - Extrato
+  4 - Sair
+                 
+""")
